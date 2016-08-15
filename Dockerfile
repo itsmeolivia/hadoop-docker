@@ -14,9 +14,6 @@ RUN yum clean all; \
 # update libselinux. see https://github.com/sequenceiq/hadoop-docker/issues/14
 RUN yum update -y libselinux
 
-RUN yum -y install epel-release; yum clean all
-RUN yum -y install python-pip; yum clean all
-
 # passwordless ssh
 RUN ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key
